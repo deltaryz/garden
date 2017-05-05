@@ -5,17 +5,20 @@ package com.cameronseid.FinalProject;
  */
 public class Plant extends Tile {
 
-    private int fullyGrownValue = 10;
+    private int fullyGrownValue = 10; // the value at which plants are considered "fully grown"
 
     /**
      * Constructor method to generate a new Plant tile
      */
-    public Plant() {
+    public Plant(int[] coordinates) {
+
+        super(coordinates);
 
         this.hydration = 5;
         this.growth = 0;
         this.symbol = "x"; // this will change after the plant is grown
         this.materialName = "Sprout"; // this will change after the plant is grown
+        this.coordinates = coordinates;
 
     }
 
@@ -41,14 +44,18 @@ public class Plant extends Tile {
         hydration--;
 
         if (hydration == 0) {
+            System.out.println("Plant at " + coordinates[0] + "x" + coordinates[1] + " has died.");
             return false;
         } else {
-            if (hydration != 1) { // plants don't grow at 1 hydration
+            if (hydration == 1) {
+                System.out.println("Plant at " + coordinates[0] + "x" + coordinates[1] + " needs watering now!");
+            } else { // plants don't grow at 1 hydration
                 if (growth < fullyGrownValue && hydration > 1) {
                     growth++;
                 }
                 if (growth >= fullyGrownValue) {
                     this.setInfo("@", "Grown Plant");
+                    System.out.println("Plant at " + coordinates[0] + "x" + coordinates[1] + " is now ready for harvest!");
                 }
             }
             return true;

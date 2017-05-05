@@ -5,21 +5,28 @@ package com.cameronseid.FinalProject;
  */
 public class Tile {
 
-    private int fullyGrownValue = 0;
-
     int hydration; // How hydrated the tile is currently. Decreases by 1 every turn, the plant "dies" if it hits 0.
     int growth; // Increased by 1 every turn. When the plant reaches 5, it is fully grown and ready to be harvested.
-    String symbol;
-    String materialName;
+    String symbol; // The symbol displayed on the map
+    String materialName; // The name shown with the "check" command
+    int[] coordinates; // the x/y coordinates of the plant
 
     /**
      * Constructor method. Sets all properties to 0 since this is a basic tile
      */
-    public Tile() {
+    public Tile(int[] coordinates) {
         this.hydration = 0;
         this.growth = 0;
         this.symbol = "O";
         this.materialName = "Empty Dirt"; // this is an empty tile
+        this.coordinates = coordinates;
+    }
+
+    /**
+     * Water this tile
+     */
+    public void waterPlant() {
+        this.hydration = 5;
     }
 
     /**
