@@ -43,19 +43,15 @@ public class Plant extends Tile {
         if (hydration == 0) {
             return false;
         } else {
-            if (hydration == 1) {
-                // Do nothing, plants don't grow at 1 hydration
-            } else {
+            if (hydration != 1){ // plants don't grow at 1 hydration
                 if (growth < fullyGrownValue && hydration > 1) {
                     growth++;
                 }
                 if (growth >= fullyGrownValue) {
-                    this.symbol = "@";
-                    this.materialName = "Grown Plant";
+                    this.setInfo("@", "Grown Plant");
                 }
             }
             return true;
         }
     }
-
 }

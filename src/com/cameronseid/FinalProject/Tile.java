@@ -41,4 +41,15 @@ public class Tile {
         return true;
     }
 
+    /**
+     * Updates the tile's identifiers with the given symbol and name
+     *
+     * @param symbol       The symbol displayed on the garden grid
+     * @param materialName The name of the material shown in the "Check" command
+     */
+    public void setInfo(String symbol, String materialName) {
+        this.symbol = symbol;
+        this.materialName = materialName;
+    }
+
 }
