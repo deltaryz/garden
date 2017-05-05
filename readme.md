@@ -5,6 +5,7 @@ Garden is a simple strategy game in which the player tends to a 5x5 grid which s
 *	Water an existing plant
 *	Harvest a fully-grown plant
 *	Wait and do nothing
+
 They may also check a tile for details of its status, but unlike the other four commands, this does not advance the turn.
 
 Plants will grow each turn as long as they are properly watered. If they reach critical dehydration, they will not grow on this turn and will alert the user of the plant’s status. Should it go un-watered for another turn, the plant dies and the tile returns to soil. If the plant is kept watered for 10 consecutive turns, it becomes “fully grown” and can be harvested at any point to yield 2 additional seeds.
