@@ -32,12 +32,21 @@ public class Tile {
     }
 
     /**
+     * Returns the symbol for printing to the garden view
+     *
+     * @return The single-character
+     */
+    public String getSymbol() {
+        return this.symbol;
+    }
+
+    /**
      * Method called every turn - does nothing for empty tiles
      *
      * @return Always returns true
      */
     public boolean progressTurn() {
-        // do nothing
+        // do nothing, this isn't a plant
         return true;
     }
 

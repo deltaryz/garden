@@ -2,6 +2,8 @@ package com.cameronseid.FinalProject;
 
 import java.util.Scanner;
 
+import static java.lang.Math.abs;
+
 /**
  * Main class for FinalProject. Orchestrates gameplay and user interaction
  */
@@ -10,11 +12,9 @@ public class FinalProject {
     private static int seeds; // Amount of seeds the player currently owns
     private static Tile[][] garden; // The garden map
     private static boolean gameRunning; // states whether a game is currently in progress
-    static Scanner keyboard = new Scanner(System.in); // Scanner for input
+    private static Scanner keyboard = new Scanner(System.in); // Scanner for input
 
     public static void main(String[] args) {
-
-        gameRunning = false;
 
         System.out.println("\n\n*** GARDEN ***\n\nFinal project for Intro to Programming Fundamentals\nDeveloped by Cameron Seid (me@cameronseid.com)\n\nAvailable on GitHub! https://github.com/techniponi/finalproject\nPublished under the MIT License, see LICENSE file for details.\n");
 
@@ -57,6 +57,8 @@ public class FinalProject {
 
         // TODO: print garden and display seeds
 
+        System.out.println(printGarden() + "\nPlease type\n<COMMAND> <X>x<Y>\nto execute a command\nExample: check 4x2\n\nCommands: CHECK, PLANT, WATER, EXIT\n\nSeeds: " + seeds);
+
         // input handler
         boolean inputSuccess = false;
         String input;
@@ -69,6 +71,29 @@ public class FinalProject {
             switch (inputArgs[0]) {
                 case "test":
                     break;
+                case "check":
+                    try {
+                        if (inputArgs.length > 1) {
+                            String[] coordinatesString = inputArgs[1].split("x");
+                            int[] coordinates = {abs(Integer.parseInt(coordinatesString[0])), abs(Integer.parseInt(coordinatesString[1]))};
+                            if (coordinates[0] > 5 || coordinates[1] > 5) {
+                                System.out.print("That tile doesn't exist!");
+                                inputSuccess = false;
+                                break;
+                            } else {
+                                System.out.println(garden[coordinates[0]][coordinates[1]].getInfo());
+                                break;
+                            }
+                        } else {
+                            System.out.print("Invalid input!");
+                            inputSuccess = false;
+                            break;
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.print("Invalid input!");
+                        inputSuccess = false;
+                        break;
+                    }
                 case "exit":
                     gameRunning = false;
                     break;
@@ -93,9 +118,9 @@ public class FinalProject {
         seeds = 2; // only give the player 2 seeds to start so they can learn the mechanics in a controlled scenario
 
         // loop through every index in 2D garden array to create tile objects
-        for (Tile[] tileArray : garden) {
-            for (Tile tile : tileArray) {
-                tile = new Tile(); // create new tile object
+        for (int x = 0; x < garden.length; x++) {
+            for (int y = 0; y < garden[x].length; y++) {
+                garden[x][y] = new Tile(); // create new tile object
             }
         }
     }
@@ -109,7 +134,7 @@ public class FinalProject {
         String gardenView = "";
         for (Tile[] tileArray : garden) {
             for (Tile tile : tileArray) {
-                gardenView += tile.symbol;
+                gardenView += tile.getSymbol();
             }
             gardenView += "\n";
         }

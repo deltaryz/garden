@@ -43,7 +43,7 @@ public class Plant extends Tile {
         if (hydration == 0) {
             return false;
         } else {
-            if (hydration != 1){ // plants don't grow at 1 hydration
+            if (hydration != 1) { // plants don't grow at 1 hydration
                 if (growth < fullyGrownValue && hydration > 1) {
                     growth++;
                 }
