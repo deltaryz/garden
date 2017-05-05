@@ -1,5 +1,9 @@
 # GARDEN
 
+###Remember to check the "Releases" tab to download!
+
+Use `java -jar garden.jar` to run the game.
+
 Garden is a simple strategy game in which the player tends to a 5x5 grid which serves as the “garden”. Each turn they are able to perform one single action:
 *	Plant a new seed
 *	Water an existing plant
