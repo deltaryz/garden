@@ -1,4 +1,4 @@
-package com.cameronseid.FinalProject;
+package com.cameronseid.garden;
 
 /**
  * Generic tile object. Any blank tiles will be this object

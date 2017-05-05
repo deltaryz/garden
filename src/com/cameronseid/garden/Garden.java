@@ -1,4 +1,4 @@
-package com.cameronseid.FinalProject;
+package com.cameronseid.garden;
 
 import java.io.*;
 import java.util.Scanner;
@@ -6,9 +6,9 @@ import java.util.Scanner;
 import static java.lang.Math.abs;
 
 /**
- * Main class for FinalProject. Orchestrates gameplay and user interaction
+ * Main class for garden. Orchestrates gameplay and user interaction
  */
-public class FinalProject {
+public class Garden {
 
     // Current version of software
     private static final String versionNumber = "1.1";
@@ -23,7 +23,7 @@ public class FinalProject {
 
     public static void main(String[] args) {
 
-        System.out.println("\n\n*** GARDEN ***\nVERSION " + versionNumber + "\n\nFinal project for Intro to Programming Fundamentals\nDeveloped by Cameron Seid (me@cameronseid.com)\n\nAvailable on GitHub! https://github.com/techniponi/finalproject\nPublished under the MIT License, see LICENSE file for details.\n");
+        System.out.println("\n\n*** GARDEN ***\nVERSION " + versionNumber + "\n\nFinal project for Intro to Programming Fundamentals\nDeveloped by Cameron Seid (me@cameronseid.com)\n\nAvailable on GitHub! https://github.com/techniponi/garden\nPublished under the MIT License, see LICENSE file for details.\n");
 
         String line = null;
         try {

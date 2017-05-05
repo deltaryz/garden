@@ -1,4 +1,4 @@
-package com.cameronseid.FinalProject;
+package com.cameronseid.garden;
 
 /**
  * Plant tile, extends the generic tile to add plant-specific functionality
