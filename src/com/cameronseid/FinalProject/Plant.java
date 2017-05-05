@@ -9,6 +9,8 @@ public class Plant extends Tile {
 
     /**
      * Constructor method to generate a new Plant tile
+     *
+     * @param coordinates X and Y coordinates of the tile in the world
      */
     public Plant(int[] coordinates) {
 

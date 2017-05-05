@@ -13,6 +13,8 @@ public class Tile {
 
     /**
      * Constructor method. Sets all properties to 0 since this is a basic tile
+     *
+     * @param coordinates X and Y coordinates of the tile in the world
      */
     public Tile(int[] coordinates) {
         this.hydration = 0;
