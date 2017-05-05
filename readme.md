@@ -1,6 +1,6 @@
 # GARDEN
 
-###Remember to check the "Releases" tab to download!
+### Remember to check the "Releases" tab to download!
 
 Use `java -jar garden.jar` to run the game.
 
