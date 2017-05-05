@@ -28,7 +28,7 @@ public class Tile {
      * Water this tile
      */
     public void waterPlant() {
-        this.hydration = 5;
+        this.hydration = 8;
     }
 
     /**

@@ -10,6 +10,9 @@ import static java.lang.Math.abs;
  */
 public class FinalProject {
 
+    // Current version of software
+    private static final String versionNumber = "1.1";
+
     private static int seeds; // Amount of seeds the player currently owns
     private static Tile[][] garden; // The garden map
     private static boolean gameRunning; // states whether a game is currently in progress
@@ -20,7 +23,7 @@ public class FinalProject {
 
     public static void main(String[] args) {
 
-        System.out.println("\n\n*** GARDEN ***\n\nFinal project for Intro to Programming Fundamentals\nDeveloped by Cameron Seid (me@cameronseid.com)\n\nAvailable on GitHub! https://github.com/techniponi/finalproject\nPublished under the MIT License, see LICENSE file for details.\n");
+        System.out.println("\n\n*** GARDEN ***\nVERSION " + versionNumber + "\n\nFinal project for Intro to Programming Fundamentals\nDeveloped by Cameron Seid (me@cameronseid.com)\n\nAvailable on GitHub! https://github.com/techniponi/finalproject\nPublished under the MIT License, see LICENSE file for details.\n");
 
         String line = null;
         try {
@@ -43,7 +46,6 @@ public class FinalProject {
         } catch (IOException ignore) {
         }
 
-        // TODO: high score display on title screen
         System.out.print("Please select a game mode:\n0: Endless Mode (Tend your garden for all of eternity!)\n1: Time Attack Mode (How many crops can you yield in 100 turns?)\n");
 
         // Make sure the input is valid before continuing
@@ -109,6 +111,9 @@ public class FinalProject {
             advanceTurn();
 
             // input handler
+            // this entire loop is a clusterfuck of copy/pasted code written in like an hour
+            // PLEASE rewrite it if you want to extend this game
+            // not that anyone would want to
             boolean inputSuccess = false;
             String input;
 

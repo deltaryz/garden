@@ -16,7 +16,7 @@ public class Plant extends Tile {
 
         super(coordinates);
 
-        this.hydration = 5;
+        this.hydration = 8;
         this.growth = 0;
         this.symbol = "x"; // this will change after the plant is grown
         this.materialName = "Sprout"; // this will change after the plant is grown
@@ -54,6 +54,9 @@ public class Plant extends Tile {
             } else { // plants don't grow at 1 hydration
                 if (growth < fullyGrownValue && hydration > 1) {
                     growth++;
+                    if (growth >= (fullyGrownValue / 2)) {
+                        this.symbol = "X";
+                    }
                 }
                 if (growth >= fullyGrownValue) {
                     this.setInfo("@", "Grown Plant");
