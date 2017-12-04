@@ -1,4 +1,4 @@
 out/
 .idea/
-FinalProject.iml
+*.iml
 scores.txt

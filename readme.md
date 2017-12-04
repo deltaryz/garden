@@ -1,4 +1,4 @@
-# GARDEN
+# GARDEN 2.0
 ### Remember to check the "Releases" tab to download!
 
 Use `java -jar garden.jar` to run the game.
@@ -17,4 +17,4 @@ Plants will grow each turn as long as they are properly watered. If they reach c
 
 The objective in “Time Attack Mode” is to harvest as many plants as possible before 100 turns pass. The player must strategically time his planting and watering so as not to waste time by letting plants die. The scores are then saved to a scores.txt file, which will display on the title screen on each subsequent boot of the game. Players are encouraged to compete with each other for a higher score.
 
-Garden is written using Java 1.8.0 update 121, and uses no third-party libraries.
+Garden is written using Java 9.0.1, and uses no third-party libraries.

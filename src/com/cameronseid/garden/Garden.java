@@ -11,7 +11,7 @@ import static java.lang.Math.abs;
 public class Garden {
 
     // Current version of software
-    private static final String versionNumber = "1.1";
+    private static final String versionNumber = "2.0";
 
     private static int seeds; // Amount of seeds the player currently owns
     private static Tile[][] garden; // The garden map
@@ -23,7 +23,7 @@ public class Garden {
 
     public static void main(String[] args) {
 
-        System.out.println("\n\n*** GARDEN ***\nVERSION " + versionNumber + "\n\nFinal project for Intro to Programming Fundamentals\nDeveloped by Cameron Seid (me@cameronseid.com)\n\nAvailable on GitHub! https://github.com/techniponi/garden\nPublished under the MIT License, see LICENSE file for details.\n");
+        System.out.println("\n\n*** GARDEN ***\nVERSION " + versionNumber + "\n\nFinal project for Intro to Programming Fundamentals 2\nDeveloped by Cameron Seid (me@cameronseid.com)\n\nAvailable on GitHub! https://github.com/techniponi/garden\nPublished under the MIT License, see LICENSE file for details.\n");
 
         String line = null;
         try {
@@ -42,7 +42,6 @@ public class Garden {
             bufferedReader.close();
 
             System.out.print("\n");
-        } catch (FileNotFoundException ignore) {
         } catch (IOException ignore) {
         }
 
@@ -84,11 +83,18 @@ public class Garden {
     private static void gameLoop() {
 
         if (gameMode == 1 && currentTurn >= 100) {
-            String name = "";
-            System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTIME'S UP!\n\nWhat is your name?\n> ");
+            String input = "";
+            System.out.print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTIME'S UP!\n\nType your three initials to save your score.\n> ");
 
-            while (name == "") {
-                name = keyboard.nextLine();
+            while (input == "" || input.length() > 3) {
+                input = keyboard.nextLine();
+            }
+
+            String name = "";
+
+            for (char initial : name.toCharArray()) {
+                // make sure it's uppercase
+                name += Character.toUpperCase(initial);
             }
 
             try (FileWriter fw = new FileWriter("scores.txt", true);
@@ -111,9 +117,7 @@ public class Garden {
             advanceTurn();
 
             // input handler
-            // this entire loop is a clusterfuck of copy/pasted code written in like an hour
-            // PLEASE rewrite it if you want to extend this game
-            // not that anyone would want to
+            // this entire loop is terrible.
             boolean inputSuccess = false;
             String input;
 
